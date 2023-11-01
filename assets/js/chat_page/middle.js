@@ -151,6 +151,11 @@ $("body").on('click', '.call_notification > .action-buttons > .action-button.att
         clearTimeout(call_notification_timeout_id);
     }
 
+    if (!$('.call_notification .call_ringtone')[0].paused) {
+        $('.call_notification .call_ringtone')[0].pause();
+        $('.call_notification .call_ringtone')[0].currentTime = 0;
+    }
+
     $('.call_notification').addClass('d-none');
 
 });
